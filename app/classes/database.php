@@ -2,8 +2,8 @@
 
 class Database
 {
-    private static $instance;
-    private static $dbPass;
+    private static $instance = null;
+    private static $dbPass = null;
     private $connection;
 
     private function __construct()
