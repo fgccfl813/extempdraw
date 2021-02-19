@@ -6,6 +6,7 @@ require_once TPL . '/header.html.php';
     <div class="row">
         <div class="col">
             <h1 class="display-2">FGCCFL Extemp Draw</h1>
+            <hr>
         </div>
     </div>
     <div class="row">
@@ -34,4 +35,6 @@ require_once TPL . '/header.html.php';
     </div>
 
 
-<?php require_once TPL . '/footer.html.php';
+<?php
+require_once TPL . '/footer.html.php';
+require_once APP . '/finish.php';
