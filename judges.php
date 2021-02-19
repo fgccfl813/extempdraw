@@ -37,3 +37,6 @@ require_once TPL . '/header.html.php';
         } ?>
     </div>
 </div>
+<?php
+require_once TPL . '/footer.html.php';
+require_once APP . '/finish.php';
