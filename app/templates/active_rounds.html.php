@@ -4,7 +4,8 @@ $db = Database::connect()->open();
 $getRoundsQuery = <<<ENDQUERY
 SELECT r.r_id , CONCAT(t.t_name, ' - ', r.r_name) 
 FROM rounds r JOIN tournaments t on r.r_tourn = t.t_id
-WHERE t.t_start < NOW() AND t.t_end > NOW()
+WHERE t.t_start < NOW() AND t.t_end > NOW() 
+ORDER BY t.t_start, r.r_seq
 ENDQUERY;
 
 $getRounds = $db->query($getRoundsQuery);

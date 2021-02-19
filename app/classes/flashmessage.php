@@ -24,14 +24,19 @@ class FlashMessage
         echo "</ul>\n</div>\n";
     }
 
-    public function getMessage()
+    public function getMessage(): string
     {
         return $this->message;
     }
 
-    public function getType()
+    public function getType(): string
     {
         return $this->type;
+    }
+
+    public function isOk(): bool
+    {
+        return in_array($this->getType(), ['warning', 'danger']);
     }
 
     public function addBody(...$newBody)

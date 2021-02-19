@@ -1,5 +1,5 @@
 <ol>
-<?php foreach ($questions as $q) : ?>
+<?php foreach ($theQuestions as $q) : ?>
     <li><?= $q ?></li>
 <?php endforeach; ?>
 </ol>

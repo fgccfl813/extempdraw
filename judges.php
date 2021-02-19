@@ -1,7 +1,10 @@
 <?php
 require_once 'app/init.php';
 
-if (isset($_POST['goRetrieve'])) include APP . '/questions.php';
+$pin = null;
+$flash = new FlashMessage();
+
+if (isset($_POST['goRetrieve'])) include APP . '/j_round.php';
 
 require_once TPL . '/header.html.php';
 ?>
@@ -18,7 +21,7 @@ require_once TPL . '/header.html.php';
             <div class="mb-3">
                 <label for="judgePin" class="form-label">PIN (from blast message)</label>
                 <input type="number" class="form-control form-control-lg" id="judgePin"
-                       name="pin" placeholder="000000" maxlength="6">
+                       name="pin" value="<?= $pin && 000000 ?>" maxlength="6">
                 <input type="hidden" name="goRetrieve" value="1">
             </div>
             <button type="submit" class="btn btn-lg btn-success">Get Questions</button>
@@ -27,6 +30,10 @@ require_once TPL . '/header.html.php';
 </div>
 <div class="row">
     <div class="col">
-        <!-- TODO: Create the code to dump the questions. -->
+        <?php if ($flash->isOk()) {
+            include APP . '/j_questions.php';
+        } else {
+            $flash->publish();
+        } ?>
     </div>
 </div>
