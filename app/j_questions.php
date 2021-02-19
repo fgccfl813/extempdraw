@@ -4,8 +4,6 @@
 
 $db = Database::connect()->open();
 
-$ordinal = ['First', 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth', 'Seventh'];
-
 $getAllQuestionsQuery = <<<ENDQUERY
 SELECT q_slot speaker, q_opt1 q1, q_opt2 q2, q_opt3 q3 
 FROM questions WHERE q_round = :rd ORDER BY q_slot ASC

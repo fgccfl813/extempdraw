@@ -47,3 +47,6 @@ function redirect(string $location)
     header("Location: $location");
     exit();
 }
+
+// Miscellaneous DRY code.
+$ordinal = ['First', 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth', 'Seventh'];
